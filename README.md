@@ -79,13 +79,20 @@ Navegue até o diretório raiz do projeto e execute:
 javac -d out\production\cs01_poo src\br\com\fiapmotiva\model\*.java src\br\com\fiapmotiva\main\Main.java
 ```
 
+<<<<<<< HEAD
+
 ### 2. Execução da Aplicação
 
-Rode o comando a seguir para iniciar as simulações e visualizar o relatório de prioridades no terminal:
+# Rode o comando a seguir para iniciar as simulações e visualizar o relatório de prioridades no terminal:
+
+3. Execute a aplicação:
+   > > > > > > > 762dfa946a0f41941ef45d578ff4163d7b7af87b
 
 ```bash
 java -cp out\production\cs01_poo br.com.fiapmotiva.main.Main
 ```
+
+<<<<<<< HEAD
 
 ### 3. Validação dos Testes Unitários Embutidos
 
@@ -97,6 +104,10 @@ Durante a execução da classe `Main`, os seguintes cenários são validados aut
 - **Teste de Mock IoT:** Simula a captura de crescimento e transmissão de dados de sensores com um Mock da interface `MonitoravelViaIoT`.
 - **Diferenciação de Crescimento:** O trecho úmido cresce com taxa acelerada de 1.5x em relação ao seco.
 
+=======
+
+> > > > > > > 762dfa946a0f41941ef45d578ff4163d7b7af87b
+
 ## Comportamento esperado
 
 - Cria dois trechos de rodovia e dois membros de equipe.
@@ -107,7 +118,9 @@ Durante a execução da classe `Main`, os seguintes cenários são validados aut
 ## Aprendizados
 
 - Uso de classes e objetos.
-- Conceitos de Classes abstratas e Interfaces.
+  <<<<<<< HEAD
+- # Conceitos de Classes abstratas e Interfaces.
+  > > > > > > > 762dfa946a0f41941ef45d578ff4163d7b7af87b
 - Encapsulamento com atributos privados e métodos públicos.
 - Validação de dados em setters e métodos de adição.
 - Listagem de objetos com `toString()`.
