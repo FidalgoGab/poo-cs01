@@ -4,8 +4,15 @@ public class TrechoRodovia {
     private int quilometroInicial;
     private int quilometroFinal;
     private double nivelVegetacaoCm;
+    private EquipeManutencao equipeAtribuida;
 
     public TrechoRodovia(int quilometroInicial, int quilometroFinal, double nivelVegetacaoCm) {
+        if (quilometroFinal <= quilometroInicial) {
+            throw new IllegalArgumentException("O quilômetro final deve ser maior que o quilômetro inicial.");
+        }
+        if (nivelVegetacaoCm < 0) {
+            throw new IllegalArgumentException("Nível de vegetação não pode ser negativo.");
+        }
         this.quilometroInicial = quilometroInicial;
         this.quilometroFinal = quilometroFinal;
         this.nivelVegetacaoCm = nivelVegetacaoCm;
@@ -19,6 +26,9 @@ public class TrechoRodovia {
         // Funções genéricas podem ser utilizadas em qualquer parte do código, sem representar algum
         // comportamento de algum objeto/entidade necessáriamente
 
+        // Decisão: O cálculo de crescimento está implementado utilizando taxa percentual (porcentagem),
+        // permitindo que o crescimento seja proporcional ao nível atual da vegetação (um modelo dinâmico onde
+        // trechos com mais vegetação crescem mais rápido em volume absoluto).
         if(taxaCrescimentoPorcentagem < 0){
             throw new IllegalArgumentException("Taxa de crescimento não pode ser negativa.");
         }
@@ -49,8 +59,23 @@ public class TrechoRodovia {
         this.nivelVegetacaoCm = nivelVegetacaoCm;
     }
 
+    public EquipeManutencao getEquipeAtribuida() {
+        return equipeAtribuida;
+    }
+
+    public void atribuirEquipe(EquipeManutencao equipe) {
+        // Validação se o trecho é crítico (vegetação >= 30cm) antes de atribuir a equipe
+        if (this.nivelVegetacaoCm < 30.0) {
+            throw new IllegalStateException("O trecho de KM " + this.quilometroInicial + " a " + this.quilometroFinal + 
+                " não está em estado crítico (vegetação < 30cm) para receber uma equipe de manutenção.");
+        }
+        this.equipeAtribuida = equipe;
+    }
+
     @Override
     public String toString() {
-        return this.getQuilometroInicial() + "km - " + this.getQuilometroFinal() + "km Tem " + this.getNivelVegetacaoCm() + "cm de vegetação";
+        return this.getQuilometroInicial() + "km - " + this.getQuilometroFinal() + "km Tem " + this.getNivelVegetacaoCm() + "cm de vegetação" + 
+            (equipeAtribuida != null ? " (Equipe Atribuída)" : " (Nenhuma Equipe atribuída)");
     }
 }
+

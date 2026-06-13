@@ -43,6 +43,9 @@ public class EquipeManutencao {
     }
 
     public void adicionarTrechoRodovia(TrechoRodovia trechoRodovia) {
+        // Estabelece a associação a partir de TrechoRodovia, onde a criticidade (vegetação >= 30cm) é validada
+        trechoRodovia.atribuirEquipe(this);
+
         Set<String> trechoRodoviaSet = new HashSet<>();
 
         for(TrechoRodovia trech : this.trechos) {
@@ -58,3 +61,4 @@ public class EquipeManutencao {
         this.trechos.add(trechoRodovia);
     }
 }
+
