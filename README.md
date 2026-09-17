@@ -1,4 +1,4 @@
-# CS02_POO
+# CS03_POO
 
 ## Visão geral
 
@@ -71,25 +71,30 @@ A interface `MonitoravelViaIoT` estabelece um contrato com o método `transmitir
 
 ## Como Executar
 
-### 1. Compilação
+### 1. Banco de dados
+
+Execute os scripts SQL na ordem:
+
+```sql
+@script-criacao.sql
+@script-dados.sql
+```
+
+### 2. Compilação
 
 Navegue até o diretório raiz do projeto e execute:
 
 ```bash
-javac -d out\production\cs01_poo src\br\com\fiapmotiva\model\*.java src\br\com\fiapmotiva\main\Main.java
+javac -d out\production\poo-cs01 $(Get-ChildItem -Recurse -Filter *.java | ForEach-Object { $_.FullName })
 ```
 
-### 2. Execução da Aplicação
+### 3. Execução da Aplicação
 
-# Rode o comando a seguir para iniciar as simulações e visualizar o relatório de prioridades no terminal:
-
-3. Execute a aplicação:
-   
 ```bash
-java -cp out\production\cs01_poo br.com.fiapmotiva.main.Main
+java -cp out\production\poo-cs01 br.com.fiapmotiva.main.Main
 ```
 
-### 3. Validação dos Testes Unitários Embutidos
+### 4. Validação dos Testes Unitários Embutidos
 
 Durante a execução da classe `Main`, os seguintes cenários são validados automaticamente via console:
 
