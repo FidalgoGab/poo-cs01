@@ -117,6 +117,28 @@ As credenciais não ficam em código-fonte. Defina as variáveis de ambiente no 
 - `DB_USER`: Usuário
 - `DB_PASSWORD`: Senha
 
+O repositório traz um arquivo `.env.example` com a lista de chaves e valores de placeholder (nenhuma credencial real é versionada). Para configurar o ambiente local, copie-o para `.env` e preencha com as suas credenciais do Oracle FIAP:
+
+```bash
+# Linux / macOS
+cp .env.example .env
+
+# Windows (PowerShell)
+Copy-Item .env.example .env
+```
+
+Conteúdo esperado do `.env` após o preenchimento:
+
+```properties
+DB_HOST=oracle.fiap.com.br
+DB_PORT=1521
+DB_SID=ORCL
+DB_USER=RM563213
+DB_PASSWORD=sua_senha_aqui
+```
+
+O arquivo `.env` está listado no `.gitignore` e nunca deve ser commitado. As variáveis são lidas pelo Spring em `application.properties` via `${DB_USER:}`, `${DB_PASSWORD:}` etc. Carregue-as na sessão antes de subir a aplicação (por exemplo, exportando-as no shell, usando o suporte a `.env` da IDE, ou passando-as como parâmetros `-DDB_USER=...`).
+
 ### Compilação e Testes
 
 Para compilar o projeto e executar a suite de testes automatizados com MockMvc:
@@ -408,6 +430,6 @@ Durante a inicialização, o S pring Data inspeciona sintaticamente o nome do m�
 - Gustavo Rossi - RM566075
 - Pedro Lima - RM565461
 - Gustavo Maia - RM562240
-\n<!-- Added by script for commit pattern -->
+  \n<!-- Added by script for commit pattern -->
 
 <!-- docs: added placeholder -->
