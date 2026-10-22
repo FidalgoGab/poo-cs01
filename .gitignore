@@ -28,3 +28,20 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Environment Variables ###
+.env
+.env.local
+.mvn/settings.xml
+
+### Maven ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### IntelliJ IDEA (project files) ###
+.idea/
+*.iml
+*.ipr
+*.iws

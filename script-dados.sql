@@ -217,13 +217,3 @@ VALUES (
     );
 
 COMMIT;
-
-SELECT e.nome AS equipe, p.nome AS membro, t.nome_trecho, t.tipo_trecho, t.nivel_vegetacao_cm
-FROM
-    equipes_manutencao e
-    JOIN equipe_membro em ON em.id_equipe = e.id_equipe
-    JOIN pessoas p ON p.documento = em.documento
-    RIGHT JOIN trechos_rodovia t ON t.id_equipe = e.id_equipe
-ORDER BY e.id_equipe, t.id_trecho;
-
-SELECT * FROM relatorio_prioridade;
