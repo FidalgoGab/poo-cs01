@@ -133,7 +133,7 @@ Conteúdo esperado do `.env` após o preenchimento:
 DB_HOST=oracle.fiap.com.br
 DB_PORT=1521
 DB_SID=ORCL
-DB_USER=RM563213
+DB_USER=RM000000
 DB_PASSWORD=sua_senha_aqui
 ```
 
@@ -430,6 +430,3 @@ Durante a inicialização, o S pring Data inspeciona sintaticamente o nome do m�
 - Gustavo Rossi - RM566075
 - Pedro Lima - RM565461
 - Gustavo Maia - RM562240
-  \n<!-- Added by script for commit pattern -->
-
-<!-- docs: added placeholder -->
